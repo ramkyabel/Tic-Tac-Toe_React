@@ -64,7 +64,6 @@ class Game extends React.Component
 		const winner = this.state.haveWinner;
 		if (winner || squares[i])
 		{
-			console.log ('we have a winner or button already filled')
 			return;
 		}
 		squares[i] = this.state.xIsNext ? 'X' : '0';
@@ -95,7 +94,6 @@ class Game extends React.Component
 		const theWinner = declareWinner (squares);
 		if (theWinner)
 		{
-			// console.log ("this winner is " + squares[0]);
 			this.setState ({haveWinner: squares[theWinner[0]],winnerPos: theWinner});
 		}
 	}
@@ -125,11 +123,6 @@ class Game extends React.Component
 			{
 				moveUpd = (this.state.history.length - 1) - moveUpd;
 			}
-			// console.log ("This moveUpd is " +  moveUpd);
-			// if (move === history.length - 1)
-			// {
-			// 	console.log ("END");
-			// }
 			const desc = moveUpd ?
 			'Move #' + moveUpd :
 			'Game start';
